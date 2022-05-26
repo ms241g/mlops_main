@@ -74,11 +74,27 @@ install the req
 pip install -r requirements.txt
 ```
 
-git init
+```bash
+ git init
+``` 
 
-dvc init
+```bash
+ dvc init
+```
 
-dvc add data_given/winequality.csv
+```bash
+ dvc add data_given/winequality.csv
+```
 
-git add.
-git commit -m "first commit"
+```bash
+ git add. && git commit -m "first commit"
+```
+
+```bash
+ git remote add origin https://github.com/ms241g/mlops_main.git 
+```
+
+```bash
+ git push origin main
+```
+
