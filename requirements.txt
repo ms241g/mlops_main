@@ -10,6 +10,9 @@ numpy
 dvc
 dvc[gdrive]
 pyyaml
+pytest
+tox
+
 
 
 
