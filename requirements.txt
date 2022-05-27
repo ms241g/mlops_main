@@ -3,6 +3,7 @@
 
 # external requirements
 
+-e. #local package install
 flake8
 sklearn
 pandas

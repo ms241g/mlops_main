@@ -96,5 +96,24 @@ pip install -r requirements.txt
 
 ```bash
  git push origin main
+  ```
+tox command
+```bash
+ tox
+``` 
+
+pytest command
+```bash
+ pytest -v
 ```
+```bash
+ pip install -e.
+```
+
+build local package
+```bash
+ python setup.py sdist bdist_wheel
+ ``` 
+ 
+`
 
