@@ -13,6 +13,9 @@ dvc[gdrive]
 pyyaml
 pytest
 tox
+flask
+gunicorn
+
 
 
 
