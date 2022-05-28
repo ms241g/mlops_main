@@ -10,7 +10,8 @@ webapp_root= "webapp"
 static_dir = os.path.join(webapp_root, "static")
 template_dir = os.path.join(webapp_root, "templates")
 
-app = Flask(__name__, static_folder=static_dir, template_folder=template_dir)
+
+app = Flask(__name__, static_folder=static_dir,template_folder=template_dir)
 
 
 def read_params(config_path):
@@ -29,18 +30,26 @@ def predict(data):
 
 
 def api_response(request):
-    pass
+    try:
+        data = np.array([list(request.json.values())])
+        response = predict(data)
+        response = {"response":response}
+        return response
+    except Exception as e:
+        print(e)
+        error = {"error": "Something went wrong..Try again"}
+        return error
 
 
 @app.route("/", methods=["GET", "POST"])
 def index():
+
     if request.method == "POST":
         try:
             if request.form:
-                data = dict((request.form).values)
-                data = [list(map(float, data))]
+                data_dic = dict(request.form).values()
+                data = [list(map(float, data_dic))]
                 response = predict(data)
-                print(response)
                 return render_template("index.html", response=response)
 
             elif request.json:
@@ -54,5 +63,6 @@ def index():
     else:
         return render_template("index.html")
 
+
 if __name__=="__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="127.0.0.1", port=5000, debug=True)
