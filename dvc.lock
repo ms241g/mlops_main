@@ -46,5 +46,5 @@ stages:
       size: 3531
     params:
       params.yaml:
-        estimators.ElasticNet.params.alpha: 0.9
-        estimators.ElasticNet.params.l1_ratio: 0.01
+        estimators.ElasticNet.params.alpha: 0.4
+        estimators.ElasticNet.params.l1_ratio: 0.001
